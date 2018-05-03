@@ -13,10 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.orionitbd.moviebox.moviebox.MainActivity;
 import com.orionitbd.moviebox.moviebox.R;
+import com.orionitbd.moviebox.moviebox.animation.FanTransformation;
 import com.orionitbd.moviebox.moviebox.movie.upcoming.MovieTabUpcomingFragment;
-import com.orionitbd.moviebox.moviebox.tv.TvTabFragment;
 
 
 /**
@@ -57,7 +56,7 @@ public class MovieTabFragment extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 mViewPager.setCurrentItem(tab.getPosition());
-
+                mViewPager.setPageTransformer(true, new FanTransformation());
             }
 
             @Override

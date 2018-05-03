@@ -21,6 +21,8 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orionitbd.moviebox.moviebox.animation.FanTransformation;
+import com.orionitbd.moviebox.moviebox.animation.ZoomOutTransformation;
 import com.orionitbd.moviebox.moviebox.movie.MovieTabFragment;
 import com.orionitbd.moviebox.moviebox.tv.TvTabFragment;
 
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 mViewPager.setCurrentItem(tab.getPosition());
+                mViewPager.setPageTransformer(true, new ZoomOutTransformation());
 
             }
 

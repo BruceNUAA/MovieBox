@@ -1,6 +1,7 @@
 package com.orionitbd.moviebox.moviebox.tv;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.movie.MovieTabFragment;
@@ -65,6 +67,8 @@ public class TvTabFragment extends Fragment {
 
             }
         });
+
+        setCustomFont();
         return v;
     }
 
@@ -100,6 +104,28 @@ public class TvTabFragment extends Fragment {
         public int getCount() {
             return tabCount;
         }
+    }
+    private void setCustomFont(){
+
+        ViewGroup vg = (ViewGroup) mTabLayout.getChildAt(0);
+        int tabsCount = vg.getChildCount();
+
+        for (int j = 0; j < tabsCount; j++) {
+            ViewGroup vgTab = (ViewGroup) vg.getChildAt(j);
+
+            int tabChildsCount = vgTab.getChildCount();
+
+            for (int i = 0; i < tabChildsCount; i++) {
+                View tabViewChild = vgTab.getChildAt(i);
+                if (tabViewChild instanceof TextView) {
+                    ((TextView) tabViewChild).setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "custom_font.ttf"));
+                }
+            }
+        }
+
+
+
+
     }
 
 }

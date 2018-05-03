@@ -2,6 +2,7 @@ package com.orionitbd.moviebox.moviebox;
 
 import android.app.SearchManager;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,11 +11,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
+import android.view.ViewGroup;
 import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.orionitbd.moviebox.moviebox.movie.MovieTabFragment;
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 mViewPager.setCurrentItem(tab.getPosition());
+
             }
 
             @Override
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         itemMenu();
+        setCustomFont();
 
     }
     public class TabPagerAdapter extends FragmentPagerAdapter{
@@ -120,4 +126,28 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Search "+query, Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void setCustomFont(){
+
+        ViewGroup vg = (ViewGroup) mTabLayout.getChildAt(0);
+        int tabsCount = vg.getChildCount();
+
+        for (int j = 0; j < tabsCount; j++) {
+            ViewGroup vgTab = (ViewGroup) vg.getChildAt(j);
+
+            int tabChildsCount = vgTab.getChildCount();
+
+            for (int i = 0; i < tabChildsCount; i++) {
+                View tabViewChild = vgTab.getChildAt(i);
+                if (tabViewChild instanceof TextView) {
+                    ((TextView) tabViewChild).setTypeface(Typeface.createFromAsset(getAssets(), "custom_font.ttf"));
+                }
+            }
+        }
+
+
+
+
+    }
+
 }

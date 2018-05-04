@@ -15,6 +15,10 @@ import android.widget.TextView;
 
 import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.animation.FanTransformation;
+import com.orionitbd.moviebox.moviebox.movie.latest.MovieTabLatestFragment;
+import com.orionitbd.moviebox.moviebox.movie.nowplaying.MovieTabNowplayingFragment;
+import com.orionitbd.moviebox.moviebox.movie.popular.MovieTabPopularFragment;
+import com.orionitbd.moviebox.moviebox.movie.toprated.MovieTabTopratedFragment;
 import com.orionitbd.moviebox.moviebox.movie.upcoming.MovieTabUpcomingFragment;
 
 
@@ -43,10 +47,9 @@ public class MovieTabFragment extends Fragment {
 
         mTabLayout.addTab(mTabLayout.newTab().setText("UPCOMING"));
         mTabLayout.addTab(mTabLayout.newTab().setText("TOP RATED"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("TRENDING"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("POPULAR"));
         mTabLayout.addTab(mTabLayout.newTab().setText("NOW PLAYING"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("TEST 1"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("TEST 2"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("LATEST"));
 
         tabPagerAdapter = new TabPagerAdapter(getChildFragmentManager(),mTabLayout.getTabCount());
         mViewPager.setAdapter(tabPagerAdapter);
@@ -86,15 +89,14 @@ public class MovieTabFragment extends Fragment {
                 case 0:
                     return new MovieTabUpcomingFragment();
                 case 1:
-                    return new MovieTabUpcomingFragment();
+                    return new MovieTabTopratedFragment();
                 case 2:
-                    return new MovieTabUpcomingFragment();
+                    return new MovieTabPopularFragment();
                 case 3:
-                    return new MovieTabUpcomingFragment();
+                    return new MovieTabNowplayingFragment();
                 case 4:
-                    return new MovieTabUpcomingFragment();
-                case 5:
-                    return new MovieTabUpcomingFragment();
+                    return new MovieTabLatestFragment();
+
 
             }
             return null;

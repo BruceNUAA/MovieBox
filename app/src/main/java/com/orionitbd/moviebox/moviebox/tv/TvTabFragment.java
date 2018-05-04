@@ -17,6 +17,11 @@ import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.animation.FanTransformation;
 import com.orionitbd.moviebox.moviebox.movie.MovieTabFragment;
 import com.orionitbd.moviebox.moviebox.movie.upcoming.MovieTabUpcomingFragment;
+import com.orionitbd.moviebox.moviebox.tv.latest.TvTabLatestFragment;
+import com.orionitbd.moviebox.moviebox.tv.onair.TvTabOnairFragment;
+import com.orionitbd.moviebox.moviebox.tv.popular.TvTabPopularFragment;
+import com.orionitbd.moviebox.moviebox.tv.today.TvTabTodayFragment;
+import com.orionitbd.moviebox.moviebox.tv.toprated.TvTabTopratedFragment;
 
 
 /**
@@ -41,12 +46,11 @@ public class TvTabFragment extends Fragment {
         mViewPager = v.findViewById(R.id.tvViewPager);
         mTabLayout = v.findViewById(R.id.tvTabLayout);
 
-        mTabLayout.addTab(mTabLayout.newTab().setText("UPCOMING"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("ON AIR"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("TODAY"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("POPULAR"));
         mTabLayout.addTab(mTabLayout.newTab().setText("TOP RATED"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("TRENDING"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("NOW PLAYING"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("TEST 1"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("TEST 2"));
+        mTabLayout.addTab(mTabLayout.newTab().setText("LATEST"));
 
         tabPagerAdapter = new TabPagerAdapter(getChildFragmentManager(),mTabLayout.getTabCount());
         mViewPager.setAdapter(tabPagerAdapter);
@@ -87,17 +91,15 @@ public class TvTabFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    return new MovieTabUpcomingFragment();
+                    return new TvTabOnairFragment();
                 case 1:
-                    return new MovieTabUpcomingFragment();
+                    return new TvTabTodayFragment();
                 case 2:
-                    return new MovieTabUpcomingFragment();
+                    return new TvTabPopularFragment();
                 case 3:
-                    return new MovieTabUpcomingFragment();
+                    return new TvTabTopratedFragment();
                 case 4:
-                    return new MovieTabUpcomingFragment();
-                case 5:
-                    return new MovieTabUpcomingFragment();
+                    return new TvTabLatestFragment();
 
             }
             return null;

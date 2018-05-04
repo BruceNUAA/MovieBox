@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.orionitbd.moviebox.moviebox.R;
@@ -34,6 +35,7 @@ public class MovieTabUpcomingFragment extends Fragment {
     private List<UpcomingMovieResponse.Result> movieResponseList;
     private UpcomingMovieAdapter adapter;
     private RecyclerView recyclerView;
+    private ProgressBar progressBar;
 
     public MovieTabUpcomingFragment() {
         // Required empty public constructor
@@ -45,7 +47,9 @@ public class MovieTabUpcomingFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_movie_tab_upcoming, container, false);
-        recyclerView = v.findViewById(R.id.upcomingRV);
+        recyclerView = v.findViewById(R.id.upcomingMovieRV);
+        progressBar = v.findViewById(R.id.pb1);
+        recyclerView.setVisibility(View.GONE);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -63,6 +67,8 @@ public class MovieTabUpcomingFragment extends Fragment {
                     GridLayoutManager glm = new GridLayoutManager(getContext(),3);
                     recyclerView.setLayoutManager(glm);
                     recyclerView.setAdapter(adapter);
+                    recyclerView.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 

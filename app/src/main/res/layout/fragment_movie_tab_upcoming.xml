@@ -5,8 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".movie.upcoming.MovieTabUpcomingFragment">
 
+    <ProgressBar
+        android:id="@+id/pb1"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/upcomingRV"
+        android:id="@+id/upcomingMovieRV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>

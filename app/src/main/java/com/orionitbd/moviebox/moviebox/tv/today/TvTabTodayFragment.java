@@ -1,4 +1,4 @@
-package com.orionitbd.moviebox.moviebox.tv.toprated;
+package com.orionitbd.moviebox.moviebox.tv.today;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.orionitbd.moviebox.moviebox.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TvTavTopratedFragment extends Fragment {
+public class TvTabTodayFragment extends Fragment {
 
 
-    public TvTavTopratedFragment() {
+    public TvTabTodayFragment() {
         // Required empty public constructor
     }
 
@@ -24,8 +24,7 @@ public class TvTavTopratedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_tv_tab_toprated_tv, container, false);
-
+        View v= inflater.inflate(R.layout.fragment_tv_tab_today, container, false);
         return v;
     }
 

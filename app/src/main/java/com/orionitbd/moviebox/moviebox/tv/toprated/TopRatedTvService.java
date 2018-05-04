@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 public interface TopRatedTvService {
 
     @GET("movie/upcoming?")
-    Call<UpcomingMovieResponse> getUpcomingMovie( @Query("api_key")String API_KEY,
-                                                  @Query("language") String lang,
-                                                  @Query("page") String page);
+    Call<UpcomingMovieResponse> getUpcomingMovie( @Query ("api_key") String API_KEY,
+                                                  @Query ("language") String lang,
+                                                  @Query ("page") String page);
 }

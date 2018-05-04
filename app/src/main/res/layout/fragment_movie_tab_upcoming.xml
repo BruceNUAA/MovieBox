@@ -5,70 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".movie.upcoming.MovieTabUpcomingFragment">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/upcomingRV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-            <ImageView
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_width="100dp"
-                android:layout_height="120dp" />
-        </LinearLayout>
-    </LinearLayout>
-
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 </android.support.design.widget.CoordinatorLayout>

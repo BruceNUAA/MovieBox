@@ -110,7 +110,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "rate our app", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.share:
-                Toast.makeText(this, "share our app", Toast.LENGTH_SHORT).show();
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plain");
+                String sub = "MobieBox";
+                String title = "Download MovieBox apps from ..... ";
+                share.putExtra(Intent.EXTRA_SUBJECT,sub);
+                share.putExtra(Intent.EXTRA_TEXT,title);
+                startActivity(Intent.createChooser(share,"Share using"));
                 break;
             case R.id.about:
                 Intent intent = new Intent(this,AboutActivity.class );

@@ -3,7 +3,6 @@ package com.orionitbd.moviebox.moviebox;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,17 +10,15 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.orionitbd.moviebox.moviebox.animation.FanTransformation;
+import com.orionitbd.moviebox.moviebox.about.AboutActivity;
 import com.orionitbd.moviebox.moviebox.animation.ZoomOutTransformation;
 import com.orionitbd.moviebox.moviebox.movie.MovieTabFragment;
 import com.orionitbd.moviebox.moviebox.tv.TvTabFragment;
@@ -116,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "share our app", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.about:
-                Toast.makeText(this, "about our app", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this,AboutActivity.class );
+                startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);

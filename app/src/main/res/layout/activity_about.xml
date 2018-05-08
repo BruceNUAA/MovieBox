@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".about.AboutActivity">
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_marginTop="30dp"
+          android:paddingHorizontal="10dp"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <ImageView
+              android:layout_gravity="center"
+              android:src="@drawable/moviebox_logo"
+              android:layout_width="wrap_content"
+              android:layout_height="100dp" />
+          <TextView
+              android:textColor="@color/colorPrimaryDark"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="About:"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <View
+              android:background="@color/colorPrimaryDark"
+              android:layout_width="match_parent"
+              android:layout_height="1dp"/>
+          <TextView
+              android:textAlignment="textStart"
+              android:layout_marginBottom="10dp"
+              android:textColor="@color/colorPrimaryDark"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="MovieBox comes for everyone who love movies, TV shows. You can browse the most popular and top rated movies, TV shows. You can also check which movies are playing in cinemas. You can watch trailer, read short descriptions."
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <TextView
+              android:textColor="@color/colorPrimaryDark"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="Follow us:"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <View
+              android:background="@color/colorPrimaryDark"
+              android:layout_width="match_parent"
+              android:layout_height="1dp"/>
+          <TextView
+              android:textAlignment="textStart"
+              android:layout_marginBottom="10dp"
+              android:textColor="@color/colorPrimaryDark"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="Facebook"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <TextView
+              android:textColor="@color/colorPrimaryDark"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="Developer:"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <View
+              android:background="@color/colorPrimaryDark"
+              android:layout_width="match_parent"
+              android:layout_height="1dp"/>
+          <TextView
+              android:textAlignment="textStart"
+              android:textColor="@color/colorPrimaryDark"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="Biplab Chandra Nag"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <TextView
+              android:textAlignment="textStart"
+              android:layout_marginBottom="10dp"
+              android:textColor="@color/colorPrimaryDark"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="Ijajul Islam Ijaj"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <TextView
+              android:textColor="@color/colorPrimaryDark"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="Credit:"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <View
+              android:background="@color/colorPrimaryDark"
+              android:layout_width="match_parent"
+              android:layout_height="1dp"/>
+          <TextView
+              android:textAlignment="textStart"
+              android:layout_marginBottom="10dp"
+              android:textColor="@color/colorPrimaryDark"
+              android:textSize="20sp"
+              android:fontFamily="@font/custom_font"
+              android:text="This product uses the TMDb API but is not endorsedd or certified by TMDb"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+          <ImageView
+              android:layout_marginBottom="30dp"
+              android:layout_gravity="center"
+              android:src="@drawable/themoviedb"
+              android:layout_width="wrap_content"
+              android:layout_height="70dp" />
+
+      </LinearLayout>
+  </ScrollView>
+</android.support.constraint.ConstraintLayout>

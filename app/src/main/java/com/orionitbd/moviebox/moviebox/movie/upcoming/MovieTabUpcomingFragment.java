@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.orionitbd.moviebox.moviebox.R;
+import com.orionitbd.moviebox.moviebox.key.Key;
 
 import java.util.List;
 
@@ -27,9 +28,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class MovieTabUpcomingFragment extends Fragment {
 
-    public static final String BASE_URL = "https://api.themoviedb.org/3/";
-    public static final String LANGUAGE = "en-US";
-    public static final String PAGE = "1";
+    private String BASE_URL = Key.BASE_URL;
+    private String LANGUAGE = Key.LANGUAGE;
+    private String PAGE = Key.PAGE;
 
     private UpcomingMovieService service;
     private List<UpcomingMovieResponse.Result> movieResponseList;

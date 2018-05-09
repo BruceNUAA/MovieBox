@@ -6,29 +6,18 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class PopularMovieResponse {
-    @SerializedName("results")
-    @Expose
-    private List<Result> results = null;
     @SerializedName("page")
     @Expose
     private long page;
     @SerializedName("total_results")
     @Expose
     private long totalResults;
-    @SerializedName("dates")
-    @Expose
-    private Dates dates;
     @SerializedName("total_pages")
     @Expose
     private long totalPages;
-
-    public List<Result> getResults() {
-        return results;
-    }
-
-    public void setResults(List<Result> results) {
-        this.results = results;
-    }
+    @SerializedName("results")
+    @Expose
+    private List<Result> results = null;
 
     public long getPage() {
         return page;
@@ -46,14 +35,6 @@ public class PopularMovieResponse {
         this.totalResults = totalResults;
     }
 
-    public Dates getDates() {
-        return dates;
-    }
-
-    public void setDates(Dates dates) {
-        this.dates = dates;
-    }
-
     public long getTotalPages() {
         return totalPages;
     }
@@ -61,31 +42,13 @@ public class PopularMovieResponse {
     public void setTotalPages(long totalPages) {
         this.totalPages = totalPages;
     }
-    public static class Dates {
 
-        @SerializedName("maximum")
-        @Expose
-        private String maximum;
-        @SerializedName("minimum")
-        @Expose
-        private String minimum;
+    public List<Result> getResults() {
+        return results;
+    }
 
-        public String getMaximum() {
-            return maximum;
-        }
-
-        public void setMaximum(String maximum) {
-            this.maximum = maximum;
-        }
-
-        public String getMinimum() {
-            return minimum;
-        }
-
-        public void setMinimum(String minimum) {
-            this.minimum = minimum;
-        }
-
+    public void setResults(List<Result> results) {
+        this.results = results;
     }
     public static class Result {
 

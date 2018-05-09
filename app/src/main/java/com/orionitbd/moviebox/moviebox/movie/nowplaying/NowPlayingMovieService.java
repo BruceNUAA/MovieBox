@@ -6,8 +6,8 @@ import retrofit2.http.Query;
 
 public interface NowPlayingMovieService {
 
-    @GET("movie/upcoming?")
-    Call<NowPlayingMovieResponse> getUpcomingMovie(@Query("api_key") String API_KEY,
+    @GET("movie/now_playing?")
+    Call<NowPlayingMovieResponse> getNowplayingMovie(@Query("api_key") String API_KEY,
                                                    @Query("language") String lang,
                                                    @Query("page") String page);
 }

@@ -24,7 +24,9 @@ public class MovieTabNowplayingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_tab_nowplaying, container, false);
+        View v = inflater.inflate(R.layout.fragment_movie_tab_nowplaying, container, false);
+
+        return v;
     }
 
 }

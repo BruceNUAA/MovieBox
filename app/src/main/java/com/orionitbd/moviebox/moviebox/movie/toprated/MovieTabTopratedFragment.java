@@ -56,7 +56,7 @@ public class MovieTabTopratedFragment extends Fragment {
                 .build();
         service = retrofit.create(TopRatedMovieService.class);
 
-        Call<TopRatedMovieResponse> call = service.getUpcomingMovie(getString(R.string.API_KEY),LANGUAGE,PAGE);
+        Call<TopRatedMovieResponse> call = service.getTopratedMovie(getString(R.string.API_KEY),LANGUAGE,PAGE);
         call.enqueue(new Callback<TopRatedMovieResponse>() {
             @Override
             public void onResponse(Call<TopRatedMovieResponse> call, Response<TopRatedMovieResponse> response) {

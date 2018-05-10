@@ -54,12 +54,13 @@
               android:layout_width="match_parent"
               android:layout_height="1dp"/>
           <TextView
+              android:id="@+id/facebookId"
               android:textAlignment="textStart"
               android:layout_marginBottom="10dp"
               android:textColor="@color/colorPrimaryDark"
               android:textSize="20sp"
               android:fontFamily="@font/custom_font"
-              android:text="Facebook"
+              android:text="@string/FacebookLink"
               android:layout_width="match_parent"
               android:layout_height="wrap_content" />
           <TextView

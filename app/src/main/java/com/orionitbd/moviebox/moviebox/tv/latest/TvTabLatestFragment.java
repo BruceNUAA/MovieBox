@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.orionitbd.moviebox.moviebox.R;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,9 +24,7 @@ public class TvTabLatestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_tv_tab_latest, container, false);
-
-        return v;
+        return inflater.inflate(R.layout.fragment_tv_tab_latest, container, false);
     }
 
 }

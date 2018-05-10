@@ -6,9 +6,15 @@
     tools:context=".tv.today.TvTabTodayFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ProgressBar
+        android:id="@+id/pb7"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="100dp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/todayTvRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

@@ -7,7 +7,7 @@ import retrofit2.http.Query;
 
 public interface TopRatedTvService {
 
-    @GET("movie/top_rated?")
+    @GET("tv/top_rated?")
     Call<TopRatedTvResponse> geTopRatedResponse( @Query ("api_key") String API_KEY,
                                                  @Query ("language") String lang,
                                                  @Query ("page") String page);

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.animation.AnimationUtil;
+import com.orionitbd.moviebox.moviebox.movie.details.MovieDetails;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -74,7 +75,8 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    Toast.makeText(context, "Movie Name :"+movieList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                    Long id = movieList.get(position).getId();
+                    MovieDetails.getDetails(context,id);
                 }
             });
         }

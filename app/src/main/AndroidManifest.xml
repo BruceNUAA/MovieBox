@@ -29,7 +29,10 @@
             android:name=".about.AboutActivity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".DetailsActivity"
+        <activity
+            android:name=".movie.DetailsMovieActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".tv.DetailsTVActivity"
             android:parentActivityName=".MainActivity"></activity>
     </application>
 

@@ -3,10 +3,8 @@ package com.orionitbd.moviebox.moviebox.movie.details;
 import android.content.Context;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.util.Log;
 
-import com.orionitbd.moviebox.moviebox.DetailsActivity;
+import com.orionitbd.moviebox.moviebox.movie.DetailsMovieActivity;
 import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.key.Key;
 
@@ -33,7 +31,7 @@ public class MovieDetails {
             @Override
             public void onResponse(Call<MovieDetailsResponse> call, Response<MovieDetailsResponse> response) {
                 if(response.code()==200){
-                    Intent intent = new Intent(context, DetailsActivity.class);
+                    Intent intent = new Intent(context, DetailsMovieActivity.class);
                     intent.putExtra("title",response.body().getOriginalTitle());
                     intent.putExtra("tagline",response.body().getTagline());
                     intent.putExtra("overview",response.body().getOverview());

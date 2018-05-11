@@ -1,4 +1,4 @@
-package com.orionitbd.moviebox.moviebox;
+package com.orionitbd.moviebox.moviebox.movie;
 
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.orionitbd.moviebox.moviebox.R;
 import com.squareup.picasso.Picasso;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsMovieActivity extends AppCompatActivity {
 
     private ImageView bannerIV ;
     private TextView titleTV;

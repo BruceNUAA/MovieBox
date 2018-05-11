@@ -1,34 +1,21 @@
 package com.orionitbd.moviebox.moviebox.movie.upcoming;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.orionitbd.moviebox.moviebox.DetailsActivity;
-import com.orionitbd.moviebox.moviebox.MainActivity;
 import com.orionitbd.moviebox.moviebox.R;
-import com.orionitbd.moviebox.moviebox.about.AboutActivity;
 import com.orionitbd.moviebox.moviebox.animation.AnimationUtil;
-import com.orionitbd.moviebox.moviebox.key.Key;
 import com.orionitbd.moviebox.moviebox.movie.details.MovieDetails;
-import com.orionitbd.moviebox.moviebox.movie.details.MovieDetailsResponse;
-import com.orionitbd.moviebox.moviebox.movie.details.MovieDetailsService;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UpcomingMovieAdapter extends RecyclerView.Adapter<UpcomingMovieAdapter.UpcomingMovieViewHolder>{
 

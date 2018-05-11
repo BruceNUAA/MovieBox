@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.animation.AnimationUtil;
+import com.orionitbd.moviebox.moviebox.tv.details.TVDetails;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -79,7 +80,8 @@ public class PopularTvAdapter extends RecyclerView.Adapter<PopularTvAdapter.Popu
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    Toast.makeText(context, "Popular Tv Name :"+tvList.get(position).getName (), Toast.LENGTH_SHORT).show();
+                    Long id = tvList.get(position).getId();
+                    TVDetails.getDetails(context,id);
                 }
             });
         }

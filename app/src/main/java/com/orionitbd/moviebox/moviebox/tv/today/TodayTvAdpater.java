@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.animation.AnimationUtil;
+import com.orionitbd.moviebox.moviebox.tv.details.TVDetails;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -80,7 +81,8 @@ public class TodayTvAdpater  extends RecyclerView.Adapter<TodayTvAdpater.TodayTv
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
-                    Toast.makeText(context, "Today Tv Name :"+tvList.get(position).getName (), Toast.LENGTH_SHORT).show();
+                    Long id = tvList.get(position).getId();
+                    TVDetails.getDetails(context,id);
                 }
             });
         }

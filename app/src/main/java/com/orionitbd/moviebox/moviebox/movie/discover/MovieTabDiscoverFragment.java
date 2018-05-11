@@ -1,4 +1,4 @@
-package com.orionitbd.moviebox.moviebox.movie.latest;
+package com.orionitbd.moviebox.moviebox.movie.discover;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.orionitbd.moviebox.moviebox.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MovieTabLatestFragment extends Fragment {
+public class MovieTabDiscoverFragment extends Fragment {
 
 
-    public MovieTabLatestFragment() {
+    public MovieTabDiscoverFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class MovieTabLatestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_tab_latest, container, false);
+        return inflater.inflate(R.layout.fragment_movie_tab_discover, container, false);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.orionitbd.moviebox.moviebox.movie.latest;
+package com.orionitbd.moviebox.moviebox.movie.discover;
 
 import android.content.Context;
 import android.net.Uri;
@@ -17,13 +17,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class LatestMovieAdapter extends RecyclerView.Adapter<LatestMovieAdapter.UpcomingMovieViewHolder>{
+public class DiscoverMovieAdapter extends RecyclerView.Adapter<DiscoverMovieAdapter.UpcomingMovieViewHolder>{
 
     private Context context;
-    private List<LatestMovieResponse.Result> movieList;
+    private List<DiscoverMovieResponse.Result> movieList;
     int previousposition =0;
 
-    public LatestMovieAdapter(Context context, List<LatestMovieResponse.Result> movieList) {
+    public DiscoverMovieAdapter(Context context, List<DiscoverMovieResponse.Result> movieList) {
         this.context = context;
         this.movieList =movieList;
     }

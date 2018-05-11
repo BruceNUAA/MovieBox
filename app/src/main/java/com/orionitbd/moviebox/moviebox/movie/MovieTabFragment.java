@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.animation.FanTransformation;
-import com.orionitbd.moviebox.moviebox.movie.latest.MovieTabLatestFragment;
+import com.orionitbd.moviebox.moviebox.movie.discover.MovieTabDiscoverFragment;
 import com.orionitbd.moviebox.moviebox.movie.nowplaying.MovieTabNowplayingFragment;
 import com.orionitbd.moviebox.moviebox.movie.popular.MovieTabPopularFragment;
 import com.orionitbd.moviebox.moviebox.movie.toprated.MovieTabTopratedFragment;
@@ -95,7 +95,7 @@ public class MovieTabFragment extends Fragment {
                 case 3:
                     return new MovieTabNowplayingFragment();
                 case 4:
-                    return new MovieTabLatestFragment();
+                    return new MovieTabDiscoverFragment();
 
 
             }

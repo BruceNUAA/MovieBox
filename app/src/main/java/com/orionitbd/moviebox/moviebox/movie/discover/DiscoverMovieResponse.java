@@ -1,11 +1,11 @@
-package com.orionitbd.moviebox.moviebox.movie.latest;
+package com.orionitbd.moviebox.moviebox.movie.discover;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class LatestMovieResponse {
+public class DiscoverMovieResponse {
     @SerializedName("results")
     @Expose
     private List<Result> results = null;

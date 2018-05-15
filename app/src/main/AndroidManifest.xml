@@ -3,6 +3,8 @@
     package="com.orionitbd.moviebox.moviebox">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
         android:allowBackup="true"
@@ -32,8 +34,10 @@
         <activity
             android:name=".movie.DetailsMovieActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".tv.DetailsTVActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".tv.DetailsTVActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".movie.video.VideoActivity"></activity>
     </application>
 
 </manifest>

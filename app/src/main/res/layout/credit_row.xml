@@ -11,14 +11,14 @@
     <LinearLayout
         android:background="@color/colorPrimary"
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/creditPoster"
             android:scaleType="fitXY"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@drawable/poster"/>
+            android:layout_height="90dp"
+            android:src="@drawable/profile"/>
         <TextView
             android:id="@+id/creditName"
             android:fontFamily="@font/custom_font"

@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tv.DetailsTVActivity">
+    tools:context=".tv.TvDetailsActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:background="#221F1F"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -18,187 +19,238 @@
                 android:src="@drawable/poster"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
+            <TextView
+                android:paddingTop="10dp"
+                android:gravity="center_horizontal"
+                android:id="@+id/detailsTitletv"
+                android:text="The show name"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp"
+                android:textStyle="normal"
+                android:fontFamily="@font/custom_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="right"
+                    android:paddingRight="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/detailstatustv"
+                    android:text="returning series"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite" />
+                <TextView
+                    android:gravity="left"
+                    android:paddingLeft="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/detailsratingtv"
+                    android:text="rating 5.0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
             <Button
+                android:id="@+id/playVideotv"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@color/colorPrimary"
                 android:textColor="#ffffff"
                 android:fontFamily="@font/custom_font"
                 android:text="watch trailer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
             <LinearLayout
                 android:padding="10dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
-                    android:text="Orginal Title :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/detailsTitletv"
-                    android:text="The movie name"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="normal"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
                 <TextView
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="OverView :"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorWhite"
                     android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     android:fontFamily="@font/custom_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/detailsOverviewtv"
                     android:text="the movie description"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorWhite"
                     android:textSize="20sp"
                     android:textStyle="normal"
                     android:fontFamily="@font/custom_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="First Air Date"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/detailFirstAirtv"
+                            android:text="date"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Last Air Date "
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/detailLastAirtv"
+                            android:text="date"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:text="Number of Season "
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/detailseasontv"
+                            android:text="date"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:text="Number of Episode"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/detailepisodetv"
+                            android:text="date"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
                 <TextView
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="Language :"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorWhite"
                     android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     android:fontFamily="@font/custom_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/detailslangtv"
                     android:text="date"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorWhite"
                     android:textSize="20sp"
                     android:textStyle="normal"
                     android:fontFamily="@font/custom_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-                <TextView
+                <View
                     android:layout_marginTop="10dp"
-                    android:text="Rating :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/custom_font"
+                    android:background="@color/colorWhite"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/detailsratingtv"
-                    android:text="date"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="normal"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:text="Status :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/detailstatustv"
-                    android:text="date"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="normal"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:text="First Air Date :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/detailFirstAirtv"
-                    android:text="date"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="normal"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:text="Last Air Date :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/detailLastAirtv"
-                    android:text="date"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="normal"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:text="Number of Season :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/detailseasontv"
-                    android:text="date"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="normal"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:text="Number of Episode :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:id="@+id/detailepisodetv"
-                    android:text="date"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="normal"
-                    android:fontFamily="@font/custom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="1dp"/>
                 <TextView
                     android:layout_marginTop="10dp"
                     android:text="Home Page:"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorWhite"
                     android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     android:fontFamily="@font/custom_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -206,12 +258,22 @@
                     android:layout_marginBottom="50dp"
                     android:id="@+id/detailhometv"
                     android:text="date"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorWhite"
                     android:textSize="20sp"
                     android:textStyle="normal"
                     android:fontFamily="@font/custom_font"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/similerTVRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

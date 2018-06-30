@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".movie.MovieDetailsActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:background="#221F1F"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:transitionName="img_transition"
+                android:id="@+id/bigbanner"
+                android:scaleType="fitXY"
+                android:src="@drawable/poster"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:id="@+id/detailsTitle"
+                    android:text="The movie name"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:id="@+id/detailsTag"
+                    android:text="the movie tag line"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:paddingRight="10dp"
+                        android:gravity="right"
+                        android:layout_weight="1"
+                        android:id="@+id/detailsStatus"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/custom_font"
+                        android:text="released"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorWhite" />
+                    <TextView
+                        android:paddingLeft="10dp"
+                        android:gravity="left"
+                        android:layout_weight="1"
+                        android:id="@+id/detailsDate"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/custom_font"
+                        android:text="2018 06 06"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <Button
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/playVideo"
+                    android:background="@color/colorPrimary"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/custom_font"
+                    android:text="watch trailer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:text="OverView :"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/detailsOverview"
+                    android:text="the movie description"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:text="Budget"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/detailsBudget"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:text="00000"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:text="Runtime "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/detailsRuntime"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:text=" time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:text="Rating "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/detailsRating"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/custom_font"
+                            android:text=" rate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="Language :"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/detailslang"
+                    android:text="the movie language"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="Genres :"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/detailsGenres"
+                    android:text="movies Genres "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="Production Company :"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/detailsProduction"
+                    android:text="movies production "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="HomePage :"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/detailsHomepage"
+                    android:text="movies production "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginBottom="40dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Related movies :"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/custom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/similerMovieRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

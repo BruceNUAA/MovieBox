@@ -4,21 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="#ECEFF1"
     android:fitsSystemWindows="true"
     tools:context="com.orionitbd.moviebox.moviebox.MainActivity">
-
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/mainAppbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#91abb7">
+        android:layout_height="wrap_content">
         <android.support.design.widget.TabLayout
             android:id="@+id/mTabLayout"
+            android:background="@drawable/background_color3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabTextColor="#ffffff"
-            app:tabSelectedTextColor="@color/colorPrimaryDark"
             app:tabIndicatorColor="#ffffff"
             app:tabMode="fixed"
             app:tabGravity="fill">
@@ -26,6 +23,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
+        android:background="#221F1F"
         android:id="@+id/mViewPager"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

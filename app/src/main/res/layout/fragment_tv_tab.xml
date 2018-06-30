@@ -4,31 +4,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
+    android:background="#221F1F"
     tools:context=".tv.TvTabFragment">
 
-    <android.support.design.widget.AppBarLayout
+    <ImageView
+        android:id="@+id/loadingtv"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/loading"/>
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
-        <android.support.design.widget.TabLayout
-            app:tabTextColor="#ffffff"
-            app:tabSelectedTextColor="@color/colorPrimaryDark"
-            app:tabIndicatorColor="#ffffff"
-            android:id="@+id/tvTabLayout"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/tvLL"
+            android:visibility="gone"
+            android:padding="10dp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabMode="scrollable"
-            app:tabGravity="fill">
-        </android.support.design.widget.TabLayout>
-    </android.support.design.widget.AppBarLayout>
+            android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/tvViewPager"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <TextView
+                android:fontFamily="@font/custom_font"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="On Air TV Show"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/onAirTvRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
 
-    </android.support.v4.view.ViewPager>
+            <TextView
+                android:fontFamily="@font/custom_font"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Today TV Show"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/todayTvRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:fontFamily="@font/custom_font"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Top Rated TV Show"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/topRatedTvRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:fontFamily="@font/custom_font"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Popular TV Show"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/popularTvRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <View
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </android.support.design.widget.CoordinatorLayout>

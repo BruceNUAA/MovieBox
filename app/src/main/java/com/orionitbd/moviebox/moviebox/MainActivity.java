@@ -18,9 +18,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.orionitbd.moviebox.moviebox.about.AboutActivity;
 import com.orionitbd.moviebox.moviebox.animation.ZoomOutTransformation;
 import com.orionitbd.moviebox.moviebox.movie.MovieTabFragment;
+import com.orionitbd.moviebox.moviebox.search.SearchFragment;
 import com.orionitbd.moviebox.moviebox.tv.TvTabFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,11 +35,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.applogo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        //getSupportActionBar().setElevation(1);
+
         mViewPager = findViewById(R.id.mViewPager);
         mTabLayout = findViewById(R.id.mTabLayout);
 
-        mTabLayout.addTab(mTabLayout.newTab().setText("MOVIE"));
-        mTabLayout.addTab(mTabLayout.newTab().setText("TV"));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.movie));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.tv));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.search));
 
         adapter = new TabPagerAdapter(getSupportFragmentManager(),mTabLayout.getTabCount());
         mViewPager.setAdapter(adapter);
@@ -64,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         itemMenu();
         setCustomFont();
 
@@ -83,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                     return new MovieTabFragment();
                 case 1:
                     return new TvTabFragment();
+                case 2:
+                    return new SearchFragment();
             }
             return null;
         }
@@ -151,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-
 
 
 

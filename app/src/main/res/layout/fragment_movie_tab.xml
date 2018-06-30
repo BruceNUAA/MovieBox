@@ -3,32 +3,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#221F1F"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
     tools:context=".movie.MovieTabFragment">
 
-    <android.support.design.widget.AppBarLayout
+    <ImageView
+        android:id="@+id/loading"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/loading"/>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
-        <android.support.design.widget.TabLayout
-            android:id="@+id/movieTabLayout"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/movieLL"
+            android:visibility="gone"
+            android:padding="10dp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabTextColor="#ffffff"
-            app:tabSelectedTextColor="@color/colorPrimaryDark"
-            app:tabIndicatorColor="#ffffff"
-            app:tabMode="scrollable"
-            app:tabGravity="fill">
-        </android.support.design.widget.TabLayout>
-    </android.support.design.widget.AppBarLayout>
+            android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/movieViewPager"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <TextView
+                android:fontFamily="@font/custom_font"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Upcoming Movie"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/upcomingMovieRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
 
-    </android.support.v4.view.ViewPager>
+            <TextView
+                android:fontFamily="@font/custom_font"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Top Rated Movie"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/topratedMovieRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:fontFamily="@font/custom_font"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Popular Movie"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/popularMovieRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:fontFamily="@font/custom_font"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Now Playing Movie"
+                android:textColor="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/nowplayMovieRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+            <View
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </android.support.design.widget.CoordinatorLayout>

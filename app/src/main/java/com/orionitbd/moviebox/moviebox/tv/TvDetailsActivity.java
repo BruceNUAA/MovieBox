@@ -16,10 +16,16 @@ import android.widget.Toast;
 import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.TrailerActivity;
 import com.orionitbd.moviebox.moviebox.key.Key;
+import com.orionitbd.moviebox.moviebox.movie.adapter.CastAdapter;
+import com.orionitbd.moviebox.moviebox.movie.others.MovieService;
+import com.orionitbd.moviebox.moviebox.movie.response.CastResponse;
+import com.orionitbd.moviebox.moviebox.movie.response.MovieTrailerResponse;
 import com.orionitbd.moviebox.moviebox.tv.adapter.SimilerTvAdapter;
+import com.orionitbd.moviebox.moviebox.tv.adapter.TvCastAdapter;
 import com.orionitbd.moviebox.moviebox.tv.others.TvService;
 import com.orionitbd.moviebox.moviebox.tv.response.SimilerTvResponse;
 import com.orionitbd.moviebox.moviebox.tv.response.TVTrailerResponse;
+import com.orionitbd.moviebox.moviebox.tv.response.TvCastResponse;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -53,6 +59,11 @@ public class TvDetailsActivity extends AppCompatActivity {
 
     //service class
     public TvService service;
+
+    //cast info....
+    private RecyclerView castRV;
+    private List<TvCastResponse.Cast>castList;
+    private TvCastAdapter tvCastAdapter;
 
     private String BASE_URL = Key.BASE_URL;
     private String LANGUAGE = Key.LANGUAGE;
@@ -97,7 +108,9 @@ public class TvDetailsActivity extends AppCompatActivity {
        seasonTV = findViewById(R.id.detailseasontv) ;
        homeTV = findViewById(R.id.detailhometv) ;
        ratingTV = findViewById(R.id.detailsratingtv) ;
-        recyclerView = findViewById(R.id.similerTVRV);
+       recyclerView = findViewById(R.id.similerTVRV);
+       castRV=findViewById (R.id.castRVTV);
+
 
        //set tv details
         Uri posterUri = Uri.parse("http://image.tmdb.org/t/p/w342/"+poster);
@@ -117,6 +130,10 @@ public class TvDetailsActivity extends AppCompatActivity {
 
         // get movie trailer url key
         getVideoKey();
+
+        //get cast info....
+
+        getTvCastInfo();
 
         //get similer movie
         getSimilerTvShow();
@@ -142,6 +159,38 @@ public class TvDetailsActivity extends AppCompatActivity {
         });
 
     }
+
+    private void getTvCastInfo () {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        service = retrofit.create(TvService.class);
+        Call<TvCastResponse> call = service.getTvCastInfo (id,getString(R.string.API_KEY),LANGUAGE);
+        call.enqueue (new Callback<TvCastResponse> ( ) {
+            @Override
+            public void onResponse ( Call<TvCastResponse> call, Response<TvCastResponse> response ) {
+                //Toast.makeText (TvDetailsActivity.this,"Response" + response.code (),Toast.LENGTH_SHORT).show ();
+                if(response.code()==200){
+                    TvCastResponse tvCastResponse=response.body ();
+                    castList=tvCastResponse.getCast ();
+                    tvCastAdapter=new TvCastAdapter (getApplicationContext (),castList);
+                    LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
+                    llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+                    castRV.setLayoutManager(llm);
+                    castRV.setAdapter (tvCastAdapter);
+                    castRV.setVisibility (View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onFailure ( Call<TvCastResponse> call, Throwable t ) {
+
+            }
+        });
+    }
+
 
     private void getSimilerTvShow() {
         Retrofit retrofitMovie = new Retrofit.Builder()

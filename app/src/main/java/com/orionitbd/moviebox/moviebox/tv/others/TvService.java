@@ -7,6 +7,7 @@ import com.orionitbd.moviebox.moviebox.tv.response.TVDetailsResponse;
 import com.orionitbd.moviebox.moviebox.tv.response.TVTrailerResponse;
 import com.orionitbd.moviebox.moviebox.tv.response.TodayTvResponse;
 import com.orionitbd.moviebox.moviebox.tv.response.TopRatedTvResponse;
+import com.orionitbd.moviebox.moviebox.tv.response.TvCastResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -52,4 +53,9 @@ public interface TvService {
                                              @Query("api_key")String API_KEY,
                                              @Query("language") String lang,
                                              @Query("page") String page);
+
+    @GET("tv/{tv_id}/credits?")
+    Call<TvCastResponse> getTvCastInfo( @Path("tv_id") Long id,
+                                        @Query("api_key")String API_KEY,
+                                        @Query("language") String lang);
 }

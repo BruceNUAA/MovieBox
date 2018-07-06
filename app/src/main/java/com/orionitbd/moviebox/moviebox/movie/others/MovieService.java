@@ -1,5 +1,6 @@
 package com.orionitbd.moviebox.moviebox.movie.others;
 
+import com.orionitbd.moviebox.moviebox.movie.response.CastResponse;
 import com.orionitbd.moviebox.moviebox.movie.response.SimilerMovieResponse;
 import com.orionitbd.moviebox.moviebox.movie.response.MovieDetailsResponse;
 import com.orionitbd.moviebox.moviebox.movie.response.NowPlayingMovieResponse;
@@ -50,4 +51,8 @@ public interface MovieService {
                                                @Query("api_key")String API_KEY,
                                                @Query("language") String lang,
                                                @Query("page") String page);
+
+    @GET("movie/{movie_id}/credits?")
+    Call<CastResponse> getCastInfo( @Path("movie_id") Long id,
+                                        @Query("api_key")String API_KEY);
 }

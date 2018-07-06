@@ -16,8 +16,10 @@ import com.orionitbd.moviebox.moviebox.R;
 import com.orionitbd.moviebox.moviebox.TrailerActivity;
 import com.orionitbd.moviebox.moviebox.key.Key;
 
+import com.orionitbd.moviebox.moviebox.movie.adapter.CastAdapter;
 import com.orionitbd.moviebox.moviebox.movie.adapter.SimilerMovieAdapter;
 import com.orionitbd.moviebox.moviebox.movie.others.MovieService;
+import com.orionitbd.moviebox.moviebox.movie.response.CastResponse;
 import com.orionitbd.moviebox.moviebox.movie.response.MovieTrailerResponse;
 import com.orionitbd.moviebox.moviebox.movie.response.SimilerMovieResponse;
 import com.squareup.picasso.Picasso;
@@ -54,6 +56,10 @@ public class MovieDetailsActivity extends  AppCompatActivity {
 
     //service class
     public MovieService service;
+    //cast info....
+    private RecyclerView castRV;
+    private List<CastResponse.Cast>castList;
+    private CastAdapter castAdapter;
 
     private String BASE_URL = Key.BASE_URL;
     private String LANGUAGE = Key.LANGUAGE;
@@ -103,6 +109,7 @@ public class MovieDetailsActivity extends  AppCompatActivity {
         productionTV = findViewById(R.id.detailsProduction);
         homepageTV = findViewById(R.id.detailsHomepage);
         recyclerView = findViewById(R.id.similerMovieRV);
+        castRV=findViewById (R.id.castRV);
 
         // set movie details
         Uri posterUri = Uri.parse("http://image.tmdb.org/t/p/w342/"+poster);
@@ -128,6 +135,8 @@ public class MovieDetailsActivity extends  AppCompatActivity {
         // get movie trailer url key
         getVideoKey();
 
+        //get cast info....
+        getCastInfo();
         //get similer movie
         getSimilerMovie();
 
@@ -141,6 +150,38 @@ public class MovieDetailsActivity extends  AppCompatActivity {
                 intent.putExtra("key",videoKey);
                 intent.putExtra("movietitle",title);
                 startActivity(intent);
+            }
+        });
+
+    }
+
+    private void getCastInfo () {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        service = retrofit.create(MovieService.class);
+        Call<CastResponse> call = service.getCastInfo (id,getString(R.string.API_KEY));
+        call.enqueue (new Callback<CastResponse> ( ) {
+            @Override
+            public void onResponse ( Call<CastResponse> call, Response<CastResponse> response ) {
+
+                if(response.code()==200){
+                    CastResponse castResponse = response.body();
+                    castList = castResponse.getCast ();
+                    castAdapter = new CastAdapter (getApplicationContext(),castList);
+                    LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
+                    llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+                    castRV.setLayoutManager(llm);
+                    castRV.setAdapter(castAdapter);
+                    castRV.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onFailure ( Call<CastResponse> call, Throwable t ) {
+
             }
         });
 

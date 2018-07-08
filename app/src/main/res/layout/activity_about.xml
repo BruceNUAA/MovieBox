@@ -39,7 +39,7 @@
               android:textColor="@color/colorWhite"
               android:textSize="20sp"
               android:fontFamily="@font/custom_font"
-              android:text="MovieBox comes for everyone who love movies, TV shows. You can browse the most popular and top rated movies, TV shows. You can also check which movies are playing in cinemas. You can watch trailer, read short descriptions."
+              android:text="cinematic  comes for everyone who love movies, TV shows. You can browse the most popular and top rated movies, TV shows. You can also check which movies are playing in cinemas. You can watch trailer, read short descriptions."
               android:layout_width="match_parent"
               android:layout_height="wrap_content" />
           <TextView
